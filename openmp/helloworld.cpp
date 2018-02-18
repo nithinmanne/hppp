@@ -4,10 +4,10 @@ using namespace std;
 
 int main()
 {
-    int id=10;
-#pragma omp parallel private(id) num_threads(16)
+    int id;
+#pragma omp parallel private(id)
     {
-        //id = omp_get_thread_num();
+        id = omp_get_thread_num();
         printf("%d: Hello World!\n", id);
     }
 	cout<<id<<endl;
